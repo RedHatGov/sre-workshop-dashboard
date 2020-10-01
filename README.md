@@ -11,14 +11,14 @@ Assuming you have a cluster and that you are logged with admin privileges.
 2. Create a project for the homeroom to live
     > `oc new-project homeroom --display-name="Homeroom Workshops"`
 
-3. Grab the template to deploy a `workshop-spawner`. Note that the `CUSTOM_TAB_*` variables take the form `<tabLabel>=<url>`
+3. Grab the template to deploy a `workshop-spawner`. Note the `WORKSHOP_IMAGE` tag should be changed with the corresponding release you want to deploy.
 > ```
 > oc process -f https://raw.githubusercontent.com/RedHatGov/workshop-spawner/develop/templates/hosted-workshop-production.json \
 >    -p SPAWNER_NAMESPACE=homeroom \
 >    -p CLUSTER_SUBDOMAIN=$CLUSTER_SUBDOMAIN \
 >    -p WORKSHOP_NAME=sre-workshop \
 >    -p CONSOLE_IMAGE=quay.io/openshift/origin-console:4.5 \
->    -p WORKSHOP_IMAGE=quay.io/redhatgov/sre-workshop-dashboard:latest \
+>    -p WORKSHOP_IMAGE=quay.io/redhatgov/sre-workshop-dashboard:0.0.1 \
 >    | oc apply -n homeroom -f -
 > ```
 
