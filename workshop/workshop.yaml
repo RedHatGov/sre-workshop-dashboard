@@ -1,0 +1,7 @@
+---
+name: OpenShift Site Reliability Engineering Workshop
+
+modules:
+  activate:
+    - index
+    - fin
