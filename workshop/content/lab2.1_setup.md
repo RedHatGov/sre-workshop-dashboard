@@ -1,6 +1,6 @@
 # Setup
 
-In order to demonstrate SRE principles on OpenShift, we need a microservices application that we can play with.  Additionally, we need service-to-service communication metrics (e.g. the four golden signals) to build SLOs.  This lab has pre-built a microservices application based on [this repo](https://github.com/dudash/openshift-microservices).  We will also use [OpenShift Service Mesh](https://www.openshift.com/learn/topics/service-mesh) to gather metrics to build our SLOs.  If you aren't familiar with service mesh, think of it as an additional infrastructure layer for our microservices.  While a service mesh adds value in many different ways, we will focus solely on the metrics for SLOs.
+In order to demonstrate SRE principles on OpenShift, we need a microservices application that we can play with.  Additionally, we need service-to-service communication metrics (e.g. the four golden signals) to build SLOs.  This lab has pre-built a microservices application based on [this repo][1].  We will also use [OpenShift Service Mesh][2] to gather metrics to build our SLOs.  If you aren't familiar with service mesh, think of it as an additional infrastructure layer for our microservices.  While a service mesh adds value in many different ways, we will focus solely on the metrics for SLOs.
 
 ## Get Started
 
@@ -121,7 +121,6 @@ http://istio-ingressgateway-userx-istio.apps.cluster-naa-xxxx.naa-xxxx.example.o
 You should see:
 
 <img src="images/app-index.png" width="1024"><br/>
- *Home page*
 
 <br>
 
@@ -156,19 +155,19 @@ There are a lot of ways this core app can be extended with additional functional
 Let's try creating a board, for example:
 
 <img src="images/app-post-board.png" width="1024"><br/>
- *Create a new board*
 
 <br>
 
 Now try to post a comment to a shared board, for example:
 
 <img src="images/app-post-sharedboard.png" width="1024"><br/>
- *Create comment on shared board*
 
 <br>
 
 ## Summary
 
-The most important part of this lab was accessing and exploring your microservices app.  Why, you ask?  Because SLOs should focus on end user happiness.  If you don't understand the end user journey in your application, then it will be more difficult to create good SLOs that help you improve user experience.  You can learn more about this critical concept in [_The Site Reliability Workbook_][1].
+The most important part of this lab was accessing and exploring your microservices app.  Why, you ask?  Because SLOs should focus on end user happiness.  If you don't understand the end user journey in your application, then it will be more difficult to create good SLOs that help you improve user experience.  You can learn more about this critical concept in [_The Site Reliability Workbook_][3].
 
-[1]: https://landing.google.com/sre/workbook/chapters/implementing-slos/
+[1]: https://github.com/dudash/openshift-microservices
+[2]: https://www.openshift.com/learn/topics/service-mesh
+[3]: https://landing.google.com/sre/workbook/chapters/implementing-slos/
