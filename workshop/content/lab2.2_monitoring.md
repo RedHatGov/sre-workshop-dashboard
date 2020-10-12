@@ -167,7 +167,7 @@ sum(increase(istio_request_duration_seconds_bucket{destination_service_name="app
 
 Enter this query into Grafana, and you should see something like the following:
 
-<img src="images/grafana-add-panel-slo-raw" width="600"><br/>
+<img src="images/grafana-add-panel-slo-raw.png" width="600"><br/>
 
 <br>
 
@@ -182,17 +182,17 @@ Let's pretty this up a bit:
 
 Here are some images if you need help finding these settings:
 
-<img src="images/grafana-add-panel-visualization" width="600"><br/>
+<img src="images/grafana-add-panel-visualization.png" width="600"><br/>
 
 <br>
 
-<img src="images/grafana-add-panel-threshold" width="600"><br/>
+<img src="images/grafana-add-panel-threshold.png" width="600"><br/>
 
 <br>
 
 Your first SLO is ready to go!  This shows you the percentage of successful requests as measured by SLO #1.  The red line indicates the threshold in which the SLO is breached.  Everything should look healthy right now.
 
-<img src="images/grafana-add-panel-slo" width="600"><br/>
+<img src="images/grafana-add-panel-slo.png" width="600"><br/>
 
 <br>
 
