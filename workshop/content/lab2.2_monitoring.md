@@ -34,8 +34,7 @@ Open the Grafana console.  Retrieve the endpoint for Grafana:
 </blockquote>
 
 ```execute
-GRAFANA_CONSOLE=$(oc get route grafana -n %username%-istio --template='https://{{.spec.host}}')
-echo $GRAFANA_CONSOLE
+echo $(oc get route grafana -n %username%-istio --template='https://{{.spec.host}}')
 ```
 <p><i class="fa fa-info-circle"></i> Click 'Allow selected permissions' if prompted to authorized access.</p>
 
@@ -95,7 +94,7 @@ Finally, let's tie this back to what you did with the dashboard.  Since our time
 
 ## Setup SLO #1
 
-It's time to add a graph to monitor our SLOs.  
+It's time to add a graph to monitor our SLOs.  Let's start with the first SLO.
 
 On the top, hover over the 'Add panel' icon as shown below.
 
@@ -205,17 +204,40 @@ Your first SLO graph is ready to go!  The graph you created shows you the percen
 
 ## Setup SLO #2
 
+Now it's time to add a graph to monitor SLO #2.  Set this up on your own by applying what you learned in the previous task.  As a reminder, here is the second SLO:
 
+* SLO #2: 90% of requests are successful and respond within 500 milliseconds (measured in 1 minute interval)
 
+<details>
+  <summary>Click here if you need help!</summary>
 
+  There are two things different between the first and second SLOs: the availability and latency targets.
 
+  The availability target is shown as a threshold in the previous graph.  Look at 'Visualization' Thresholds & Time Regions to adjust this value.
 
+  The latency target is trickier.  Remember, we had to use a different metric called 'istio_request_duration_seconds_bucket' to include the latency target.  Here it is again for the first SLO:
+
+  ```
+  sum(increase(istio_request_duration_seconds_bucket{destination_service_name="app-ui", response_code!~"5.*", le="1"}[1m]))
+  ```
+
+  Inspect that query carefully.  Where did we specify the latency target?
+</details>
+
+After adding the second SLO graph, your dashboard should look like this:
+
+<img src="images/grafana-add-panel-slo-two.png" width="600"><br/>
+
+<br>
 
 ## Error Budgets
 
 
+
+
 ## Summary
 
+TODO: Reference to blog post
 
 [1]: https://grafana.com/
 [2]: https://grafana.com/docs/grafana/latest/panels/panels-overview/
