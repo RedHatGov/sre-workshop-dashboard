@@ -24,7 +24,7 @@ Service Level Objectives:
 * SLO #1: 95% of requests are successful and respond within 1 second
 * SLO #2: 90% of requests are successful and respond within 500 milliseconds
 
-## Setup Dashboard
+### Setup Dashboard
 
 Now that you have defined your SLOs, you need a way to monitor and visualize these in a dashboard.  Let's use Grafana for this task.
 
@@ -92,7 +92,7 @@ With that in mind, here are the SLOs again (under workshop time constraints):
 
 Finally, let's tie this back to what you did with the dashboard.  Since our time range will be 1 minute intervals, we have constrained the dashboard view to 'Last 5 minutes'.
 
-## Setup SLO #1
+### Setup SLO #1
 
 It's time to add a graph to monitor our SLOs.  Let's start with the first SLO.
 
@@ -202,7 +202,7 @@ Your first SLO graph is ready to go!  The graph you created shows you the percen
 
 <br>
 
-## Setup SLO #2
+### Setup SLO #2
 
 Now it's time to add a graph to monitor SLO #2.  Set this up on your own by applying what you learned in the previous task.  As a reminder, here is the second SLO:
 
@@ -232,12 +232,83 @@ After adding the second SLO graph, your dashboard should look like this:
 
 ## Error Budgets
 
+In the introduction labs, we discussed the concept of the error budget and why it matters.  As a reminder, you calculate an error budget as '100% - SLO', and this value indicates how much failure you can tolerate (i.e. the error budget).
 
+Let's add error budget graphs to your dashboard.  Like before, we will do SLO #1 together, and you will complete SLO #2 on your own.
 
+On the top, hover over the 'Add panel' icon as shown below.
+
+<img src="images/grafana-add-panel-icon.png" width="600"><br/>
+
+<br>
+
+Select 'Add Query'.  You should see the panel view.
+
+<img src="images/grafana-new-panel.png" width="600"><br/>
+
+<br>
+
+You need to enter the query that calculates the error budget.  '100% - SLO' equals the following query:
+
+```
+1.0 - sum(increase(istio_request_duration_seconds_bucket{destination_service_name="app-ui", response_code!~"5.*", le="1"}[1m])) / sum(increase(istio_requests_total{destination_service_name="app-ui"}[1m]))
+```
+
+Enter this query into Grafana, and you should see something like the following:
+
+<img src="images/grafana-add-panel-error-budget-raw.png" width="600"><br/>
+
+<br>
+
+Let's pretty this up again:
+
+* In 'Legend', put something more human readable.  For example, '% of requests that breached SLO #1 (1 min interval)'
+* Under 'Visualization' Axes, change the unit to 'Misc - percent (0.0-1.0)'.  
+* Under 'Visualization' Axes, change the Y-Min to '0' and Y-Max to '0.25'.
+* Under 'Visualization' Thresholds & Time regions, add a threshold of greater than ('gt') 0.05
+* Under 'General' Title, change the title to 'SLO #1 Error Budget'
+* Under 'General' Description, change the description to 'SLO #1 has 5% failure threshold'
+
+You can reorganize your graphs by highlighting the name of the graph and dragging it around the dashboard.  Feel free to reorganize.  (We like putting the error budget right below the SLO).  Your dashboard should look like this:
+
+<img src="images/grafana-add-panel-error-budget.png" width="600"><br/>
+
+<br>
+
+Let's take a step back and review what you just did.  You added a new graph to show the error budget of SLO #1.  Notice that the threshold is 'greater than 5%'.  This means - the error budget is exhausted when 5% or more of requests breach SLO #1.  Why is the threshold 5%?  Because the availability target for the first SLO is 95%.  Right now, there are no failures so the percentage of requests that breach SLO #1 is 0%.
+
+Awesome!  Let's add the error budget graph for the second SLO.  Set this up on your own by applying what you just learned.  As a reminder, here is the second SLO:
+
+* SLO #2: 90% of requests are successful and respond within 500 milliseconds (measured in 1 minute interval)
+
+<details>
+  <summary>Click here if you need help!</summary>
+
+  The query to calculate the error budget for the first SLO is:
+
+  ```
+  1.0 - sum(increase(istio_request_duration_seconds_bucket{destination_service_name="app-ui", response_code!~"5.*", le="1"}[1m])) / sum(increase(istio_requests_total{destination_service_name="app-ui"}[1m]))
+  ```
+
+  You need to change that query to measure the second SLO.
+
+  Don't forget the threshold!  The availability target for the second SLO is 90% (not 95%), so the threshold is 10%.  Make sure to put that value as the threshold in your graph.
+
+</details>
+
+After adding the second SLO error budget graph, your dashboard should look like this:
+
+<img src="images/grafana-add-panel-error-budget-two.png" width="600"><br/>
+
+<br>
 
 ## Summary
 
-TODO: Reference to blog post
+This lab showed critical tasks for a SRE: creating SLOs and building graphs to monitor SLOs and error budgets.  Both are crucial.  You need to build consensus with different stakeholders to create SLOs, and you need to have good tools in place to monitor and act on SLOs if and when they are breached.
+
+Another point to emphasize: SLOs do not have to be perfect!  Perfection is not the goal.  You should be iterating on SLOs and their targets over time as you observe the behavior of your application.
+
+Check out these really great Red Hat blog posts [part 1][7] and [part 2][8] to learn more about monitoring like a SRE in OpenShift.  The tasks in this lab were inspired by these articles.
 
 [1]: https://grafana.com/
 [2]: https://grafana.com/docs/grafana/latest/panels/panels-overview/
@@ -245,3 +316,5 @@ TODO: Reference to blog post
 [4]: https://grafana.com/blog/2020/02/04/introduction-to-promql-the-prometheus-query-language/
 [5]: https://prometheus.io/docs/prometheus/latest/querying/basics/
 [6]: https://prometheus.io/docs/prometheus/latest/querying/functions/#increase
+[7]: https://www.openshift.com/blog/monitoring-services-like-an-sre-in-openshift-servicemesh
+[8]: https://www.openshift.com/blog/monitoring-services-like-an-sre-in-openshift-servicemesh-part-2-collecting-standard-metrics-3
