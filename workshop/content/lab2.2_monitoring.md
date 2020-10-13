@@ -119,13 +119,13 @@ You need to calculate the total number of requests sent to the user interface.  
 istio_requests_total{destination_service_name="app-ui"}
 ```
 
-You need to calculate this over the 1 minute time interval (remember, we need a time window over which we measure our SLO).  The below query says 'Give me the total number of requests sent to the user interface over the last 1 minute' by using the Prometheus [increase][6] function.
+You need to calculate this over the 1 minute time interval (remember, we need a time window over which we measure our SLO).  The below query says 'Give me the total number of requests sent to the user interface over the last 1 minute' by using the Prometheus [increase][6] function.  It will return total request count broken down by response code.
 
 ```
 increase(istio_requests_total{destination_service_name="app-ui"}[1m])
 ```
 
-This previous query returns total requests broken down by response code.  Now all we have to do is sum it up.
+Now all we have to do is sum it up.
 
 ```
 sum(increase(istio_requests_total{destination_service_name="app-ui"}[1m]))
@@ -137,17 +137,17 @@ Enter this query into Grafana, and you should see something like the following:
 
 <br>
 
-In summary, this graph shows you the total number of requests to the UI as measured over a 1 minute interval.
+In summary, this graph shows you the total number of requests to the app UI as measured over a 1 minute interval.
 
 <br>
 
-We need to take this query and determine availability of the user interface.  You'll do this using response codes.  Anything that is *not* a 500 response code is a succees.  The below query says 'Give me the total number of requests to the user interface that have succeeded, as measured over a 1 min interval'.
+You need to take this query and determine availability of the user interface.  You will do this using response codes.  Anything that is *not* a 500 response code is considered a succees.  The below query says 'Give me the total number of requests to the user interface that have succeeded, as measured over a 1 min interval'.
 
 ```
 sum(increase(istio_requests_total{destination_service_name="app-ui", response_code!~"5.x"}[1m]))
 ```
 
-One more thing.  We also want to add latency.  In SLO #1, we want all of the successful requests that returned within 1 second.  We use a different metric that buckets requests in terms of how quickly it responded to the end user.  The below query says 'Give me the total number of requests to the user interface that have succeeded and returned within 1 second, as measured over a 1 min interval.'
+One more thing.  You also need to add latency.  In SLO #1, we want all of the successful requests that returned within 1 second.  To do this, we use a different metric called `istio_request_duration_seconds_bucket`.  This metrics groups requests into buckets in terms of how quickly it responded to the end user.  The below query says 'Give me the total number of requests to the user interface that have succeeded and returned within 1 second, as measured over a 1 min interval.'
 
 ```
 sum(increase(istio_request_duration_seconds_bucket{destination_service_name="app-ui", response_code!~"5.*", le="1"}[1m]))
@@ -183,18 +183,21 @@ Let's pretty this up a bit:
 Here are some images if you need help finding these settings:
 
 <img src="images/grafana-add-panel-visualization.png" width="600"><br/>
+*Visualization*
 
 <br>
 
 <img src="images/grafana-add-panel-threshold.png" width="600"><br/>
+*Threshold*
 
 <br>
 
 <img src="images/grafana-add-panel-general.png" width="600"><br/>
+*General*
 
 <br>
 
-Your first SLO is ready to go!  This shows you the percentage of successful requests as measured by SLO #1.  The red line indicates the threshold in which the SLO is breached.  Everything should look healthy right now.
+Your first SLO graph is ready to go!  The graph you created shows you the percentage of successful requests as measured by SLO #1.  The red line indicates the threshold in which the SLO is breached.  Everything should look healthy right now.
 
 <img src="images/grafana-add-panel-slo.png" width="600"><br/>
 
