@@ -190,6 +190,10 @@ Here are some images if you need help finding these settings:
 
 <br>
 
+<img src="images/grafana-add-panel-general.png" width="600"><br/>
+
+<br>
+
 Your first SLO is ready to go!  This shows you the percentage of successful requests as measured by SLO #1.  The red line indicates the threshold in which the SLO is breached.  Everything should look healthy right now.
 
 <img src="images/grafana-add-panel-slo.png" width="600"><br/>
