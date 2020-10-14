@@ -11,7 +11,7 @@ In fact, alerting is more complex.  Your instructor should have reviewed these c
 * Detection Time: How long it takes to fire alert on event
 * Reset Time: How long alerts fire for after issue is resolved
 
-Alerting in a way that handles all four of these considerations is difficult.  The [_The Site Reliability Workbook_][1] is a fantastic resource on this topic, and we won't rehash the contents of that here.  The general recommendation is to use the "Burn rate", which is how fast the error budget is exhausted relative to the SLO.  For this task, we will use an overly simplified burn rate calculation to alert on your SLOs.
+Alerting in a way that handles all four of these considerations is difficult.  [_The Site Reliability Workbook_][1] is a fantastic resource on this topic, and we won't rehash the contents of that here.  The general recommendation is to use the "Burn rate", which is how fast the error budget is exhausted relative to the SLO.  For this task, we will use an overly simplified burn rate calculation to alert on your SLOs.
 
 ## Burn Rate
 
@@ -27,7 +27,7 @@ For this exercise, let's keep it simple:
 1. You want to be alerted after 50% of the error budget is consumed.
 2. Your alert window is 1 minute.
 
-'50% of the SLO error budget consumed over 1 minute' requires a burn rate of 0.5.  You can review the math for how to calculate this in The [_The Site Reliability Workbook_][1].
+'50% of the SLO error budget consumed over 1 minute' requires a burn rate of 0.5.  You can review the math for how to calculate this in [_The Site Reliability Workbook_][1].
 
 ## Setup SLO #1
 
@@ -94,13 +94,70 @@ After adding the second SLO error budget graph, your dashboard should look like 
 
 <br>
 
-## Alerting Test
+## Test
 
+Here's the fun part!  Let's do a quick test to see if alerting is actually working.
 
+"Break the app" by scaling the user interface service down.
 
+<blockquote>
+<i class="fa fa-terminal"></i> Scale app down:
+</blockquote>
+
+```execute
+oc scale --replicas=0 dc app-ui
+```
+
+Open your dashboard.  Wait a minute and hit the refresh icon in the top right:
+
+<img src="images/grafana-alert-test-refresh.png" width="600"><br/>
+
+<br>
+
+Your SLOs will be breached, and the error budget graphs will be highlighted in red.  It should look like this:
+
+<img src="images/grafana-alert-test-unhealthy.png" width="600"><br/>
+
+<br>
+
+Note: It will take at least a minute before the alert fires and the graphs turn red.  This is because the alert check occurs every minute.
+
+In the left navigation bar, select 'Alert - Alert Rules':
+
+<img src="images/grafana-alert-test-navigation.png" width="600"><br/>
+
+<br>
+
+You should see two alerts corresponding to the alerts you created:
+
+<img src="images/grafana-alert-test-alerting.png" width="600"><br/>
+
+<br>
+
+It's working!  Let's put the app back into a healthy state.
+
+<blockquote>
+<i class="fa fa-terminal"></i> Scale app up:
+</blockquote>
+
+```execute
+oc scale --replicas=1 dc app-ui
+```
+
+Wait a minute and the graphs should return to a healthy state.
+
+<img src="images/grafana-alert-test-healthy.png" width="600"><br/>
+
+<br>
+
+Note: It will take at least a minute before the red highlighting stops.  This is because the alert check occurs every minute.
 
 ## Summary
 
+Configuring SLO and error budget alerts is not as easy as it may seem.  This lab gave you a good starting point for how to think about burn rates and configuring alerts in Grafana.
 
+There are a couple of important things we didn't show.  In a real scenario, you need to integrate the alert with some type of notification system (e.g. email, ticketing system, Slack).  Also, you need to prioritize events so you can send high priority alerts differently than low priority alerts to on-call SREs.  
+
+Alerting is a critical and complex topic.  We encourage you to learn more as you undertake the SRE journey.
 
 [1]: https://landing.google.com/sre/workbook/chapters/alerting-on-slos/
