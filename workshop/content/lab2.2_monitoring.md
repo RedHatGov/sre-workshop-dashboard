@@ -1,6 +1,6 @@
 # Monitoring with Grafana
 
-The next steps are to create SLOs for the application, proactively monitor SLOs, and put alerts in place when SLOs are breached.  These are fundamental SRE tasks that we need to get right.  Fortunately, OpenShift provides us technologies and tools to make this easier.  The service mesh layer is already configured to collect relevant metrics in our application.  Service mesh also deploys [Grafana][1], a visualization tool that we can use to build dashboards for our application.
+The next steps are to create SLOs for the application and proactively monitor SLOs.  These are fundamental SRE tasks that we need to get right.  Fortunately, OpenShift provides us technologies and tools to make this easier.  The service mesh layer is already configured to collect relevant metrics in our application.  Service mesh also deploys [Grafana][1], a visualization tool that we can use to build dashboards for our application.
 
 Let's dig in and try this on OpenShift.  Before you proceed, let's start sending traffic to your application.
 
@@ -280,6 +280,8 @@ Let's take a step back and review what you just did.  You added a new graph to s
 Awesome!  Let's add the error budget graph for the second SLO.  Set this up on your own by applying what you just learned.  As a reminder, here is the second SLO:
 
 * SLO #2: 90% of requests are successful and respond within 500 milliseconds (measured in 1 minute interval)
+
+Note: Remember to change the latency!  Don't just copy and paste the same query for the second SLO.
 
 <details>
   <summary>Click here if you need help!</summary>
