@@ -19,7 +19,13 @@ oc whoami
 
 <br>
 
-The instructor will have preconfigured your projects for you.
+Next, download a local copy of the workshop repo:
+
+```execute
+git clone https://github.com/RedHatGov/sre-workshop-code.git
+```
+
+The instructor will have preconfigured your projects for you.  Let's double check:
 
 <blockquote>
 <i class="fa fa-terminal"></i> List your projects:

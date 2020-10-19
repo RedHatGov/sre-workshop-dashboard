@@ -17,9 +17,11 @@ while true; do curl -s -o /dev/null $GATEWAY_URL; done
 
 ## Service Level Objectives
 
-TODO
+It's time to create your SLOs!  In the introduction labs, we discussed the concept of the SLO and why it matters.  Your instructor should have also reviewed the considerations for creating good SLOs with you.
 
-Service Level Objectives: 
+It's worth emphasizing that constructing good SLOs is not an easy task.  On your first attempt, the SLO may be too aggressive or too lax.  But that's ok!  Your first SLOs will probably not be perfect.  You should be iterating on SLOs over time as you learn more about the behavior of your application.
+
+For this exercise, let's keep it simple and use the following SLOs:
 
 * SLO #1: 95% of requests are successful and respond within 1 second
 * SLO #2: 90% of requests are successful and respond within 500 milliseconds
@@ -46,10 +48,6 @@ Navigate to this URL in a new browser tab.  Login with the same credentials you 
 Once logged in, you should be presented with the Grafana console:
 
 <img src="images/grafana-welcome.png" width="600"><br/>
-
-<br>
-
-TODO: If you prefer to follow along, import the preexisting dashboard.
 
 <br>
 
@@ -306,6 +304,8 @@ After adding the second SLO error budget graph, your dashboard should look like 
 
 ## Summary
 
+Note: If you would like to check your work, you can import the pre-existing dashboard in Grafana using the workshop repo [here][9].
+
 This lab showed critical tasks for a SRE: creating SLOs and building graphs to monitor SLOs and error budgets.  Both are crucial.  You need to build consensus with different stakeholders to create SLOs, and you need to have good tools in place to monitor and act on SLOs if and when they are breached.
 
 Another point to emphasize: SLOs do not have to be perfect!  Perfection is not the goal.  You should be iterating on SLOs and their targets over time as you observe the behavior of your application.
@@ -320,3 +320,4 @@ Check out these really great Red Hat blog posts [part 1][7] and [part 2][8] to l
 [6]: https://prometheus.io/docs/prometheus/latest/querying/functions/#increase
 [7]: https://www.openshift.com/blog/monitoring-services-like-an-sre-in-openshift-servicemesh
 [8]: https://www.openshift.com/blog/monitoring-services-like-an-sre-in-openshift-servicemesh-part-2-collecting-standard-metrics-3
+[9]: https://github.com/RedHatGov/sre-workshop-code/blob/main/dashboard/sample.json
