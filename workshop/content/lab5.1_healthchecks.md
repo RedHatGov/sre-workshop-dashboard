@@ -36,9 +36,15 @@ But what happens if your application needs to scale?  Stress the application:
 siege -c 100 $GATEWAY_URL/stress
 ```
 
-Your SLOs are breached, and the error budgets are depleted:
+Wait 5 minutes.  Your SLOs are breached, and the error budgets are depleted:
 
 <img src="images/grafana-slo-failure.png" width="600"><br/>
+
+<br>
+
+Note: If you wait long enough (~10m), the application SLO will recover but the root cause will not be fixed!  It might look like this:
+
+<img src="images/grafana-slo-failure-recover.png" width="600"><br/>
 
 <br>
 
@@ -56,14 +62,28 @@ Identify:
 <details>
   <summary>Click here if you need help!</summary>
 
+  Look at the horizontal pod autoscaler:
 
-  Look at your application pods:
+  ```execute
+  oc describe hpa app-ui
+
+  The HPA is working and requested additional pods.
+
+  But look at your application pods:
 
   ```execute
   oc get pods -l app=app-ui
   ```
+  
+  The newest version of the application fails to deploy.
 
-  The newest version of the application fails to deploy with probes added.
+  What's the difference between the old and new versions?  Look at the probes you added:
+
+  ```execute
+  cat sre-workshop-code/scenarios/healthchecks/probes.yaml
+  ```
+
+  Look at the [documentation][1] for Readiness and Liveness Probes.  What might be missing in the probe configuration?
 
 </details>
 
