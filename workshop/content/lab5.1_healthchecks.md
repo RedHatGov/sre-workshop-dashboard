@@ -24,17 +24,21 @@ Open your dashboard.  Wait a minute and hit the refresh icon in the top right:
 
 <br>
 
-Your SLOs are in good standing.  But what happens if your application needs to scale?
+Your SLOs are in good standing:
 
-Increase the load on the application:
+<img src="images/grafana-add-panel-error-budget-two.png" width="600"><br/>
+
+<br>
+
+But what happens if your application needs to scale?  Stress the application:
 
 ```execute
-## Increase load on the application
+siege -c 100 $GATEWAY_URL/stress
 ```
 
 Your SLOs are breached, and the error budgets are depleted:
 
-<img src="images/grafana-alert-test-unhealthy.png" width="600"><br/>
+<img src="images/grafana-slo-failure.png" width="600"><br/>
 
 <br>
 
