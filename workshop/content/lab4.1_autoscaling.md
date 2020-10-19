@@ -4,9 +4,7 @@
 
 At this point in the workshop, we present to you a number of scenarios to enact with your microservices application.  Each scenario causes some type of change that impacts your SLO.  As the SRE, it is your mission to ensure the uptime of the application as you enact these scenarios.
 
-Note: None of these scenarios require you to make changes to the application code!
-
-In this scenario, you are going to add [autoscaling][1] to the application using the Horizontal Pod Autoscaler.  This is a fundamental capability in OpenShift.  Everything looks healthy right now, so let's go ahead and make this change.
+In this scenario, the product manager has informed you that you should expect an increase in the user base since the marketing campaign will start for the application.  Exciting!  However, you don't want to manually adjust the number of application pods in OpenShift.  In anticipation of this growth, you decide to add [autoscaling][1] to the application using the Horizontal Pod Autoscaler.  This is a fundamental capability in OpenShift that allows your application to dynamically scale.  By default, the Horizontal Pod Autoscaler will scale your application based on CPU metrics.  Everything looks healthy right now, so let's go ahead and make this change.
 
 ## Run
 
@@ -43,6 +41,8 @@ echo $GATEWAY_URL
 It returns `no healthy upstream`.  Not good.  Your application is inaccessible, and your users are very unhappy.
 
 ## Triage
+
+Note: None of these scenarios require you to make changes to the application code!
 
 What went wrong?  This is an exercise for you to find out as the SRE!
 
