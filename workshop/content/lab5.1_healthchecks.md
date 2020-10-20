@@ -66,6 +66,7 @@ Identify:
 
   ```execute
   oc describe hpa app-ui
+  ```
 
   The HPA is working and requested additional pods.
 
