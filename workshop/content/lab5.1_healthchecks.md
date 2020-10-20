@@ -33,10 +33,10 @@ Your SLOs are in good standing:
 But what happens if your application needs to scale?  Stress the application:
 
 ```execute
-siege -c 100 $GATEWAY_URL/stress
+siege -t 1H -c 6 "$GATEWAY_URL/stress"
 ```
 
-Wait 5 minutes.  Your SLOs are breached, and the error budgets are depleted:
+Your SLOs are breached, and the error budgets are depleted:
 
 <img src="images/grafana-slo-failure.png" width="600"><br/>
 
