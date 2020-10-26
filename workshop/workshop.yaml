@@ -4,4 +4,12 @@ name: OpenShift Site Reliability Engineering Workshop
 modules:
   activate:
     - index
+    - lab1.1_sre
+    - lab1.2_slo
+    - lab3.1_monitoring
+    - lab3.2_alerting
+    - lab4.1_autoscaling
+    - lab4.2_autoscalingsolution
+    - lab5.1_healthchecks
+    - lab5.2_healthcheckssolution    
     - fin
