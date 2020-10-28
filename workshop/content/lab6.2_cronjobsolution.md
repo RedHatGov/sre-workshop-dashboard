@@ -25,5 +25,8 @@ Please make sure to attempt the lab on your own before viewing the solution!
 
 ## Summary
 
+If you are interested, the inspiration for this scenario is [here][3].
+
 [1]: https://docs.openshift.com/container-platform/4.5/applications/application-health.html
 [2]: https://github.com/theckang/openshift-sre/blob/solutions/solutions/cronjob/cronjob.yaml
+[3]: https://youtu.be/LpFApeaGv7A?t=495
