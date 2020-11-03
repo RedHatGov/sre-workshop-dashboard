@@ -6,6 +6,7 @@ modules:
     - index
     - lab1.1_sre
     - lab1.2_slo
+    - lab2.1_setup
     - lab3.1_monitoring
     - lab3.2_alerting
     - lab4.1_autoscaling
