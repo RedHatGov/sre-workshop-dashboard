@@ -13,4 +13,6 @@ modules:
     - lab4.2_autoscalingsolution
     - lab5.1_healthchecks
     - lab5.2_healthcheckssolution    
+    - lab6.1_cronjob
+    - lab6.2_cronjobsolution 
     - fin

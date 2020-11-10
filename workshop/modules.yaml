@@ -20,5 +20,9 @@ modules:
     name: Lab 5.1
   lab5.2_healthcheckssolution:
     name: Lab 5.2
+  lab6.1_cronjob:
+    name: Lab 6.1
+  lab6.2_cronjobsolution:
+    name: Lab 6.2
   fin:
     name: Fin
