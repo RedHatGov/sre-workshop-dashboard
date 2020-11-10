@@ -43,4 +43,8 @@ Please make sure to attempt the lab on your own before viewing the solution!
 
 ## Summary
 
+In your next status update, you inform your team that you successfully enabled health check probes for better fault tolerance.  Now, OpenShift will restart the application pod if the application falls into an unhealthy state.
+
+Health checks are fundamental capabilities in OpenShift, and it's important to configure health checks probes correctly.  Otherwise, your applications can serve traffic when they are not ready or be unnecessarily restarted.  As a reminder, you can learn more about health check probes in the [OpenShift documentation][1].
+
 [1]: https://docs.openshift.com/container-platform/4.5/applications/application-health.html

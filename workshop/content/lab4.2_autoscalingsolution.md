@@ -49,6 +49,11 @@ Please make sure to attempt the lab on your own before viewing the solution!
 
 ## Summary
 
-If you are interested, the inspiration for this scenario is [here][1].
+After successfully deploying autoscaling, the application is able to dynamically autoscale to accomodate more users as the marketing campaign kicks off.  The product manager is very happy with the result.  Awesome!
 
-[1]: https://github.com/kubernetes/kubernetes/issues/67135
+Understanding the interaction between the Horizontal Pod Autoscaler and Deployments is key to configuring autoscaling correctly.  As a reminder, you can learn more about autoscaling in the [OpenShift documentation][1].
+
+If you are interested, the inspiration for this scenario is [here][2].
+
+[1]: https://docs.openshift.com/container-platform/4.5/nodes/pods/nodes-pods-autoscaling.html
+[2]: https://github.com/kubernetes/kubernetes/issues/67135
