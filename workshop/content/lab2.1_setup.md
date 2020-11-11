@@ -53,16 +53,12 @@ Output:
 
 ```
 NAME                                      READY   STATUS    RESTARTS   AGE
-grafana-xxxxxxxxx-xxxxx                   2/2     Running   0          17m
-istio-citadel-xxxxxxxxx-xxxxx             1/1     Running   0          20m
-istio-egressgateway-xxxxxxxx-xxxxx        1/1     Running   0          17m
-istio-galley-xxxxxxxx-xxxxx               1/1     Running   0          19m
-istio-ingressgateway-xxxxxxxxx-xxxxx      1/1     Running   0          17m
-istio-pilot-xxxxxxxxx-xxxxx               2/2     Running   0          18m
-istio-policy-xxxxxxxxx-xxxxx              2/2     Running   0          19m
-istio-sidecar-injector-xxxxxxxxx-xxxxx    1/1     Running   0          17m
-istio-telemetry-xxxxxxxxx-xxxxx           2/2     Running   0          19m
-prometheus-xxxxxxxxx-xxxxx                2/2     Running   0          19m
+grafana-xxxxxxxxx-xxxxx                   2/2     Running   0          5h30m
+istio-egressgateway-xxxxxxxx-xxxxx        1/1     Running   0          5h30m
+istio-ingressgateway-xxxxxxxxx-xxxxx      1/1     Running   0          5h30m
+istio-telemetry-xxxxxxxxx-xxxxx           2/2     Running   0          5h25m
+istiod-workshop-install-xxxxxxxxx-xxxxx   1/1     Running   0          5m28s
+prometheus-xxxxxxxxx-xxxxx                2/2     Running   0          5h30m
 ```
 
 <br>
