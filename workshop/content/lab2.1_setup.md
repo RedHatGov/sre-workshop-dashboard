@@ -17,6 +17,8 @@ oc whoami
 ```
 *You can click the play button in the top right corner of the code block to automatically execute the command for you.*
 
+You should see your username: '%username%'.
+
 <br>
 
 Next, download a local copy of the workshop repo:
@@ -64,7 +66,7 @@ prometheus-xxxxxxxxx-xxxxx                2/2     Running   0          5h30m
 <br>
 
 <blockquote>
-<i class="fa fa-terminal"></i> Switch to your user project.  For example:
+<i class="fa fa-terminal"></i> Switch to your user project if you aren't already using it.  For example:
 </blockquote>
 
 ```execute

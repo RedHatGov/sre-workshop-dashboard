@@ -63,7 +63,7 @@ On the top right, you should see a gear icon.  Hover over that for 'Dashboard se
 
 <br>
 
-Give the Dashboard a new name.  Click 'Save' when done.
+Give the Dashboard a new name.  Set `Auto-refresh` to `5s`.  Keep the other settings as their default values.  Click 'Save' when done.
 
 <img src="images/grafana-create-dashboard-settings.png" width="600"><br/>
 
