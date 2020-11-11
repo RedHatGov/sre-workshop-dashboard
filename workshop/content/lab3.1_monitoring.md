@@ -138,13 +138,12 @@ In summary, this graph shows you the total number of requests to the app UI as m
 
 <br>
 
-You need to take this query and determine availability of the user interface.  You will do this using response codes.  Anything that is *not* a 500 response code is considered a succees.  The below query says 'Give me the total number of requests to the user interface that have succeeded, as measured over a 1 min interval'.
+You also need a query to determine the availability of and the latency to the user interface.
 
-```
-sum(increase(istio_requests_total{destination_service_name="app-ui", response_code!~"5.x"}[1m]))
-```
+* For availability, you will measure this using response codes.  Anything that is *not* a 500 response code is considered a succees.
+* For latency, you need all of the successful requests that returned within 1 second for SLO #1.  To measure this, you will use a different metric called `istio_request_duration_seconds_bucket`.  This metrics groups requests into latency buckets in terms of how quickly it responded to the end user.  
 
-One more thing.  You also need to add latency.  In SLO #1, we want all of the successful requests that returned within 1 second.  To do this, we use a different metric called `istio_request_duration_seconds_bucket`.  This metrics groups requests into buckets in terms of how quickly it responded to the end user.  The below query says 'Give me the total number of requests to the user interface that have succeeded and returned within 1 second, as measured over a 1 min interval.'
+The below query says 'Give me the total number of requests to the user interface that have succeeded and returned within 1 second, as measured over a 1 min interval.'
 
 ```
 sum(increase(istio_request_duration_seconds_bucket{destination_service_name="app-ui", response_code!~"5.*", le="1"}[1m]))
