@@ -18,7 +18,7 @@ Assuming you have a cluster and that you are logged with admin privileges.
 >    -p CLUSTER_SUBDOMAIN=$CLUSTER_SUBDOMAIN \
 >    -p WORKSHOP_NAME=sre-workshop \
 >    -p CONSOLE_IMAGE=quay.io/openshift/origin-console:4.5 \
->    -p WORKSHOP_IMAGE=quay.io/redhatgov/sre-workshop-dashboard:0.0.1 \
+>    -p WORKSHOP_IMAGE=quay.io/redhatgov/sre-workshop-dashboard:0.1.2 \
 >    | oc apply -n homeroom -f -
 > ```
 
