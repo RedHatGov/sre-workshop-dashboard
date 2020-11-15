@@ -49,7 +49,7 @@ Your SLOs are in good standing:
 But what happens if your application needs to scale?  Stress the application:
 
 ```execute
-siege -t 1H -c 6 "$GATEWAY_URL/stress"
+ab -c 6 -t 3600 $GATEWAY_URL/stress
 ```
 
 Your SLOs are breached, and the error budgets are depleted:
