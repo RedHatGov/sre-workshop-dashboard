@@ -1,5 +1,7 @@
 # Introduction to Site Reliability Engineering
 
+<br>
+
 ## What is SRE?
 
 Traditional IT Operations teams are built around minimizing and mitigating risk whenever possible. Their monitoring systems are often focused on measuring infrastructure metrics that often describe symptoms of potential problems, but aren't as concerned with the quality of service that the system is providing. 
@@ -21,6 +23,8 @@ In the SRE books, Google outlines the 8 tenets of SRE and goes in depth on each.
 * Provisioning
 * **Efficiency and Performance**
 
+<br>
+
 ## Why SRE?
 
 There are many different reasons why IT organizations are beginning to adopt SRE, but it's most often because product owners are not able to quickly adapt and delivery the experience that the consumer of the product is expecting. For a traditional IT Operations team, they may be experiencing one or more of the following that is contributing to the situation:
@@ -35,8 +39,16 @@ There are many different reasons why IT organizations are beginning to adopt SRE
 
 For teams that are already embracing the principles of a DevOps culture, SRE can provide additional structure to a cross-functional team to enable the success of business goals.
 
-## How to get started with SRE?
+<br>
+
+## How to Get Started With SRE?
 
 Implementing a SRE program is a transformational process, but the first step in working to implement SRE concepts is to really understand the business purpose of the application, and what the desired behaviors are for the consumers of the applications. This is not something that the SRE team can do by themselves, it's a team effort that requires input from the product owners of the application, the development team, and the SRE team. Once on you have defined your objectives, it is important to ensure that you can collect all the metrics you need to identify the behaviors described in the objective.
 
 We will dive deeper into these concepts in the next lab.
+
+<br>
+
+## Summary
+
+In this lab we discussed what Site Reliability Engineering is, why it's beneficial to implement and how we can get started. Next we're going to discuss some important terminology that SRE team use to describe how their systems are performing, and how to measure how much risk is in the system.
