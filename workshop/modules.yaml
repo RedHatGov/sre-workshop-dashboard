@@ -4,7 +4,7 @@ modules:
     name: Index
   lab1.1_sre:
     name: Lab 1.1
-  lab1.2_slo:
+  lab1.2_terms:
     name: Lab 1.2
   lab2.1_setup:
     name: Lab 2.1

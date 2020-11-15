@@ -5,7 +5,7 @@ modules:
   activate:
     - index
     - lab1.1_sre
-    - lab1.2_slo
+    - lab1.2_terms
     - lab2.1_setup
     - lab3.1_monitoring
     - lab3.2_alerting
