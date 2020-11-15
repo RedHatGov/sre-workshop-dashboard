@@ -3,7 +3,7 @@
 
 ## Description 
 
-As enterprises and agencies modernize their application portfolios on new platforms, customers have become accustom to having access and availability to their content from a variety of sources.  A result of these two factors has drivenm operations teams to exploring new ways of managing their applications and platforms. 
+As enterprises and agencies modernize their application portfolios on new platforms, customers have become accustomed to having access and availability to their content from a variety of sources.  These two factors have driven operations teams to exploring new ways of managing their applications and platforms. 
 
 The SRE is one way to implement the DevOps paradigm of managing systems to help maintain focus on engineering work, as opposed to operations work, and has become increasingly popular since Google published their book _Site Reliability Engineering_, which defined how they implement and use the methodology.
 
