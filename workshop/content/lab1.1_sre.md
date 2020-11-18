@@ -27,7 +27,7 @@ In the SRE books, Google outlines the 8 tenets of SRE and goes in depth on each.
 
 ## Why SRE?
 
-There are many different reasons why IT organizations are beginning to adopt SRE, but it's most often because product owners are not able to quickly adapt and delivery the experience that the consumer of the product is expecting. For a traditional IT Operations team, they may be experiencing one or more of the following that is contributing to the situation:
+There are many different reasons why IT organizations are beginning to adopt SRE, but it's most often because product owners are not able to quickly adapt and deliver the experience that the consumer of the product is expecting. For a traditional IT Operations team, they may be experiencing one or more of the following that is contributing to the situation:
 
 * One-off automation scripts and significant amount of manual toil
 * Product development teams tossing code over the fence for Ops to run
