@@ -43,7 +43,7 @@ For teams that are already embracing the principles of a DevOps culture, SRE can
 
 ## How to Get Started With SRE?
 
-Implementing a SRE program is a transformational process, but the first step in working to implement SRE concepts is to really understand the business purpose of the application, and what the desired behaviors are for the consumers of the applications. This is not something that the SRE team can do by themselves, it's a team effort that requires input from the product owners of the application, the development team, and the SRE team. Once on you have defined your objectives, it is important to ensure that you can collect all the metrics you need to identify the behaviors described in the objective.
+Implementing a SRE program is a transformational process, but the first step in working to implement SRE concepts is to really understand the business purpose of the application, and what the desired behaviors are for the consumers of the applications. This is not something that the SRE team can do by themselves, it's a team effort that requires input from the product owners of the application, the development team, and the SRE team. Once you have defined your objectives, it is important to ensure that you can collect all the metrics you need to identify the behaviors described in the objective.
 
 We will dive deeper into these concepts in the next lab.
 
@@ -51,4 +51,4 @@ We will dive deeper into these concepts in the next lab.
 
 ## Summary
 
-In this lab we discussed what Site Reliability Engineering is, why it's beneficial to implement and how we can get started. Next we're going to discuss some important terminology that SRE team use to describe how their systems are performing, and how to measure how much risk is in the system.
+In this lab we discussed what Site Reliability Engineering is, why it's beneficial to implement and how we can get started. Next we're going to discuss some important terminology that SRE teams use to describe how their systems are performing, and how to measure how much risk is in the system.
