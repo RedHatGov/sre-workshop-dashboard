@@ -17,7 +17,7 @@ oc whoami
 ```
 *You can click the play button in the top right corner of the code block to automatically execute the command for you.*
 
-You should see your username: '%username%'.
+You should see your username: %username%.
 
 <br>
 
@@ -37,18 +37,18 @@ The instructor will have preconfigured your projects for you.  Let's double chec
 oc projects
 ```
 
-You should see two projects: your user project (e.g. '%username%' and '%username%-istio').  
+You should see two projects: your user project (e.g. %username% and %username%-istio).  
 
 <br>
 
-The '%username%-istio' project is a service mesh dedicated to your project.
+The %username%-istio project is a service mesh dedicated to your project.
 
 <blockquote>
 <i class="fa fa-terminal"></i> List the pods in the service mesh project:
 </blockquote>
 
 ```execute
-oc get pods -n '%username%-istio'
+oc get pods -n %username%-istio
 ```
 
 Output:
@@ -70,7 +70,7 @@ prometheus-xxxxxxxxx-xxxxx                2/2     Running   0          5h30m
 </blockquote>
 
 ```execute
-oc project '%username%'
+oc project %username%
 ```
 
 <br>
