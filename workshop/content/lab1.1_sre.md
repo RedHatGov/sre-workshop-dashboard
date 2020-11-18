@@ -10,7 +10,7 @@ So what is Site Reliability Engineering (SRE) and what does it aim to solve? SRE
 
 This is accomplished by deploying their software on highly automated, deterministic platforms, and recording as much data about the system as possible by leveraging monitoring and log aggregation systems. Having that data, they are able to build a picture of the qualitative behaviors of the system and how that relates to the goals of the business. That picture enables SRE's and product owners to set objectives for the performance of the system which allows them to continuously adjust the amount of work that is needed to improve stability versus adding new functionality.
 
-The SRE concepts that we will be discussing were created at Google and they've written several books on the topic to help other organizations, but it's important to remember that your organization will likely have different challenges that you are trying to solve than Google. These are great starting points, but they should evolved to meet the needs of your organization. For simplicity within this workshop, we will be referencing concepts from Google.
+The SRE concepts that we will be discussing were created at Google and they've written several books on the topic to help other organizations, but it's important to remember that your organization will likely have different challenges that you are trying to solve than Google. These are great starting points, but they should evolve to meet the needs of your organization. For simplicity within this workshop, we will be referencing concepts from Google.
 
 In the SRE books, Google outlines the 8 tenets of SRE and goes in depth on each. Since we have limited time for the workshop we will only be touching on the tents that are highlighted:
 
