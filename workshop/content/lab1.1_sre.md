@@ -8,7 +8,7 @@ Traditional IT Operations teams are built around minimizing and mitigating risk 
 
 So what is Site Reliability Engineering (SRE) and what does it aim to solve? SRE builds on the the foundational principles of the DevOps movement by providing a framework to build and maintain reliable services, while encouraging continuous innovation and system improvement. Instead of trying to minimize or eliminate risk, SRE's embrace risk and work to manage the amount of risk in the systems by balancing the stability of the system and the velocity of development of new features being introduced.
 
-This accomplished by deploying their software in on highly automated, deterministic platforms, and recording as much data about the system as possible by leveraging monitoring and log aggregation systems. Having that data, they are able to build a picture of the qualitative behaviors of the system and how that relates to the goals of the business. That picture enables SRE's and product owners to set objectives for the performance of the system which allows them to continuously adjust the amount of work that is needed to improve stability versus adding new functionality.
+This is accomplished by deploying their software on highly automated, deterministic platforms, and recording as much data about the system as possible by leveraging monitoring and log aggregation systems. Having that data, they are able to build a picture of the qualitative behaviors of the system and how that relates to the goals of the business. That picture enables SRE's and product owners to set objectives for the performance of the system which allows them to continuously adjust the amount of work that is needed to improve stability versus adding new functionality.
 
 The SRE concepts that we will be discussing were created at Google and they've written several books on the topic to help other organizations, but it's important to remember that your organization will likely have different challenges that you are trying to solve than Google. These are great starting points, but they should evolve to meet the needs of your organization. For simplicity within this workshop, we will be referencing concepts from Google.
 
@@ -43,7 +43,7 @@ For teams that are already embracing the principles of a DevOps culture, SRE can
 
 ## How to Get Started With SRE?
 
-Implementing a SRE program is a transformational process, but the first step in working to implement SRE concepts is to really understand the business purpose of the application, and what the desired behaviors are for the consumers of the applications. This is not something that the SRE team can do by themselves, it's a team effort that requires input from the product owners of the application, the development team, and the SRE team. Once on you have defined your objectives, it is important to ensure that you can collect all the metrics you need to identify the behaviors described in the objective.
+Implementing a SRE program is a transformational process, but the first step in working to implement SRE concepts is to really understand the business purpose of the application, and what the desired behaviors are for the consumers of the applications. This is not something that the SRE team can do by themselves, it's a team effort that requires input from the product owners of the application, the development team, and the SRE team. Once you have defined your objectives, it is important to ensure that you can collect all the metrics you need to identify the behaviors described in the objective.
 
 We will dive deeper into these concepts in the next lab.
 
@@ -51,4 +51,4 @@ We will dive deeper into these concepts in the next lab.
 
 ## Summary
 
-In this lab we discussed what Site Reliability Engineering is, why it's beneficial to implement and how we can get started. Next we're going to discuss some important terminology that SRE team use to describe how their systems are performing, and how to measure how much risk is in the system.
+In this lab we discussed what Site Reliability Engineering is, why it's beneficial to implement and how we can get started. Next we're going to discuss some important terminology that SRE teams use to describe how their systems are performing, and how to measure how much risk is in the system.

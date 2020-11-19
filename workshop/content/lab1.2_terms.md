@@ -21,7 +21,7 @@ SLI is a carefully defined quantitative measure of some aspect of the level of s
 
 <br>
 
-The four golden signals are a great place to start for most common systems, there are other SLI's that can be used, depending on the needs and type of the system being monitored. For example, a data storage system might use data durability as a SLI. System availability is another important
+The four golden signals are a great place to start for most common systems, there are other SLI's that can be used, depending on the needs and type of the system being monitored. For example, a data storage system might use data durability as a SLI. System availability is another important SLI.
 
 <br>
 
@@ -35,7 +35,7 @@ This is the term that SRE's tend to focus on because it helps to construct a vie
 
 ## Service Level Agreement (SLA)
 
-SLA is probably the most well known of the terms discussed so far. It is the explicit or implicit contract with your users, which includes the consequences of meeting or breaching the SLA. Depending on the service, it is common to see financial consequences associated with breach of an SLA. SLA's typically require lawyers to change since it is associated with contracts. There can be one or more SLO's associated with an SLA; the SLO should **ALWAYS** be set to a tighter tolerance than the SLA.
+SLA is probably the most well known of the terms discussed so far. It is the explicit or implicit contract with your users, which includes the consequences of meeting or breaching the SLA. Depending on the service, it is common to see financial consequences associated with breach of an SLA. SLA's typically require lawyers to change since they are associated with contracts. There can be one or more SLO's associated with an SLA; the SLO should **ALWAYS** be set to a tighter tolerance than the SLA.
 
 <br>
 
@@ -56,7 +56,7 @@ Here are a couple suggestions on how to choose your SLO's more effectively:
 
 ## Error Budgets
 
-In the last lab it was mentioned that SRE's accept risk and manage it. 100% reliability isn't feasible nor reasonable to expect in any system. The SLO inherently describes an acceptable level of unreliability, and risk, within the system during a given time frame. The Error Budget is used to determine how much of that allowable unreliability has been present in the system and how much is of that budgeted unreliability is left. You can calculate your error budge by doing subtracting 1 - "SLO of the service". An example of this would be:
+In the last lab it was mentioned that SRE's accept risk and manage it. 100% reliability isn't feasible nor reasonable to expect in any system. The SLO inherently describes an acceptable level of unreliability, and risk, within the system during a given time frame. The Error Budget is used to determine how much of that allowable unreliability has been present in the system and how much of that budgeted unreliability is left. You can calculate your error budget by subtracting 1 - "SLO of the service". An example of this would be:
 
 >A 99.9% SLO has a 0.1% error budget. 
 

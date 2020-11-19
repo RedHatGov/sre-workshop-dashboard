@@ -1,6 +1,6 @@
 # Monitoring with Grafana
 
-The next steps are to create SLOs for the application and proactively monitor SLOs.  These are fundamental SRE tasks that we need to get right.  Fortunately, OpenShift provides us technologies and tools to make this easier.  The service mesh layer is already configured to collect relevant metrics in our application.  Service mesh also deploys [Grafana][1], a visualization tool that we can use to build dashboards for our application.
+The next steps are to create SLOs for the application and proactively monitor SLOs.  These are fundamental SRE tasks that we need to get right.  Fortunately, OpenShift provides us with technologies and tools to make this easier.  The service mesh layer is already configured to collect relevant metrics in our application.  Service mesh also deploys [Grafana][1], a visualization tool that we can use to build dashboards for our application.
 
 Let's dig in and try this on OpenShift.  Before you proceed, let's start sending traffic to your application.
 
@@ -169,7 +169,7 @@ Enter this query into Grafana, and you should see something like the following:
 
 Let's pretty this up a bit:
 
-* In 'Legend', put something more human readable.  For example, '% of successful requests to the UI that returned within 1 second (1 min interval)
+* In 'Legend', put something more human readable.  For example, '% of successful requests to the UI that returned within 1 second (1 min interval)'
 * Under 'Visualization' Axes, change the unit to 'Misc - percent (0.0-1.0)'.  
 * Under 'Visualization' Axes, change the Y-Min to '0' and Y-Max to '1.0'.
 * Under 'Visualization' Thresholds & Time regions, add a threshold of less than ('lt') 0.95

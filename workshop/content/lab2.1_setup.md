@@ -4,7 +4,7 @@ In order to demonstrate SRE principles on OpenShift, we need a microservices app
 
 ## Get Started
 
-Let's do a check to make sure your environment is configured correctly.  First, test you have access to the OpenShift cluster via the `oc` CLI.
+Let's do a check to make sure your environment is configured correctly.  First, test if you have access to the OpenShift cluster via the `oc` CLI.
 
 <blockquote>
 <i class="fa fa-terminal"></i> You should already be logged in to your cluster in your web terminal.
@@ -17,7 +17,7 @@ oc whoami
 ```
 *You can click the play button in the top right corner of the code block to automatically execute the command for you.*
 
-You should see your username: '%username%'.
+You should see your username: %username%.
 
 <br>
 
@@ -37,18 +37,18 @@ The instructor will have preconfigured your projects for you.  Let's double chec
 oc projects
 ```
 
-You should see two projects: your user project (e.g. '%username%') and '%username%'-istio.  
+You should see two projects: your user project (e.g. %username% and %username%-istio).  
 
 <br>
 
-The '%username%-istio` project is a service mesh dedicated to your project.
+The %username%-istio project is a service mesh dedicated to your project.
 
 <blockquote>
 <i class="fa fa-terminal"></i> List the pods in the service mesh project:
 </blockquote>
 
 ```execute
-oc get pods -n '%username%'-istio
+oc get pods -n %username%-istio
 ```
 
 Output:
@@ -70,7 +70,7 @@ prometheus-xxxxxxxxx-xxxxx                2/2     Running   0          5h30m
 </blockquote>
 
 ```execute
-oc project '%username%'
+oc project %username%
 ```
 
 <br>
@@ -170,7 +170,7 @@ Now try to post a comment to a shared board, for example:
 
 ## Summary
 
-The most important part of this lab was accessing and exploring your microservices app.  Why, you ask?  Because SLOs should focus on end user happiness.  If you don't understand the end user journey in your application, then it will be more difficult to create good SLOs that help you improve user experience.  You can learn more about this critical concept in [_The Site Reliability Workbook_][3].
+The most important part of this lab was accessing and exploring your microservices app.  Why, you ask?  Because SLOs should focus on end user happiness.  If you don't understand the end user's journey in your application, then it will be more difficult to create good SLOs that help you improve user experience.  You can learn more about this critical concept in [_The Site Reliability Workbook_][3].
 
 [1]: https://github.com/dudash/openshift-microservices
 [2]: https://www.openshift.com/learn/topics/service-mesh
