@@ -98,6 +98,12 @@ After adding the second SLO error budget graph, your dashboard should look like 
 
 Here's the fun part!  Let's do a quick test to see if alerting is actually working.
 
+First, save the dashboard to persist and activate the alerts.
+
+<img src="images/grafana-save-dashboard.png" width="600"><br/>
+
+<br>
+
 "Break the app" by scaling the user interface service down.
 
 <blockquote>
